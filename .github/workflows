@@ -1,0 +1,14 @@
+name: CSG Protection Gate
+on: [push, pull_request]
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tarik Kode Target
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Jalankan CSG
+        uses: FerryAchmadAkbar4522210088/config-size-guard@develop
+        with:
+          paths: 'config'
